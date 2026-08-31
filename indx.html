@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)file:///C:/Users/DELL/Downloads/%D8%A7%D8%B3%D8%A7%D9%85%D8%A9%20%D9%83%D8%AD%D9%88%D8%B4.html -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الذكاء الاصطناعي والأتمتة الشامل (السلايدات 1 - 45)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./indx_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./indx_files/all.min.css">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #0f172a;
+            --accent: #0d9488;
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --correct-bg: #dcfce7;
+            --correct-border: #22c55e;
+            --correct-text: #15803d;
+            --wrong-bg: #fee2e2;
+            --wrong-border: #ef4444;
+            --wrong-text: #b91c1c;
+            --radius: 14px;
+            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 30px 15px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        .header-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
+            color: #fff;
+            padding: 35px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-card h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .header-card p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .badge-slides {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+        }
+
+        /* Student Info Section */
+        .info-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 22px 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-group label {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .input-group input {
+            padding: 11px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Sticky Progress Bar */
+        .progress-wrapper {
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .progress-container {
+            background: #e2e8f0;
+            border-radius: 20px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #0284c7, #0d9488);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Question Cards */
+        .question-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 26px;
+            box-shadow: var(--shadow);
+            margin-bottom: 22px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .question-number {
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .question-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            user-select: none;
+            background: #fff;
+        }
+
+        .option-label:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .option-key {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .option-label input[type="radio"] {
+            display: none;
+        }
+
+        .option-label.selected {
+            border-color: var(--primary);
+            background-color: #f0f9ff;
+            color: var(--primary-dark);
+        }
+
+        .option-label.selected .option-key {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Result Styles on Questions */
+        .question-card.correct-card {
+            border-color: var(--correct-border);
+            background-color: #f0fdf4;
+        }
+
+        .question-card.wrong-card {
+            border-color: var(--wrong-border);
+            background-color: #fef2f2;
+        }
+
+        .option-label.correct-option {
+            border-color: var(--correct-border);
+            background-color: var(--correct-bg);
+            color: var(--correct-text);
+            font-weight: 700;
+        }
+
+        .option-label.correct-option .option-key {
+            background: var(--correct-border);
+            color: #fff;
+        }
+
+        .option-label.user-wrong-option {
+            border-color: var(--wrong-border);
+            background-color: var(--wrong-bg);
+            color: var(--wrong-text);
+        }
+
+        .option-label.user-wrong-option .option-key {
+            background: var(--wrong-border);
+            color: #fff;
+        }
+
+        .explanation {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .correct-card .explanation {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .wrong-card .explanation {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        /* Submit Button */
+        .action-container {
+            text-align: center;
+            margin: 35px 0 50px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            border: none;
+            padding: 16px 50px;
+            font-size: 18px;
+            font-weight: 800;
+            font-family: inherit;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.4);
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(2, 132, 199, 0.5);
+        }
+
+        .btn-submit:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        /* Score Summary Box */
+        .score-modal {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid var(--primary);
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f0f9ff 0%, #e0f2fe 100%);
+            border: 6px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .score-number {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .score-total {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .score-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .badge-passed {
+            background: var(--correct-bg);
+            color: var(--correct-text);
+            border: 1px solid var(--correct-border);
+        }
+
+        .badge-failed {
+            background: var(--wrong-bg);
+            color: var(--wrong-text);
+            border: 1px solid var(--wrong-border);
+        }
+
+        .score-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .detail-box {
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .detail-box .val {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .detail-box .lbl {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .btn-reset, .btn-print {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            margin: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .btn-reset {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .btn-reset:hover {
+            background: #cbd5e1;
+        }
+
+        .btn-print {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-print:hover {
+            background: #0f766e;
+        }
+
+        @media print {
+            .progress-wrapper, .btn-submit, .btn-reset, .btn-print, .input-group input {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .question-card {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header-card">
+        <h1><i class="fa-solid fa-graduation-cap"></i> اختبار الذكاء الاصطناعي والتصحيح الآلي</h1>
+        <p>تقييم شامل في مفاهيم الذكاء الاصطناعي، نماذج المحادثة، وأتمتة وكلاء الذكاء الاصطناعي في منصة n8n</p>
+        <span class="badge-slides"><i class="fa-solid fa-book-open"></i> يغطي المنهج من السلايد 1 إلى السلايد 45</span>
+    </div>
+
+    <!-- Student Info -->
+    <div class="info-card">
+        <div class="input-group">
+            <label for="studentName"><i class="fa-solid fa-user"></i> اسم المتدرب:</label>
+            <input type="text" id="studentName" value="أسامة محمد عبده" placeholder="أدخل اسمك الكامل">
+        </div>
+        <div class="input-group">
+            <label for="studentDept"><i class="fa-solid fa-briefcase"></i> القسم / التخصص:</label>
+            <input type="text" id="studentDept" value="الصيانة الميكانيكية" placeholder="أدخل قسمك">
+        </div>
+    </div>
+
+    <!-- Sticky Progress Bar -->
+    <div class="progress-wrapper">
+        <span class="progress-text" id="progressStatus">الإنجاز: 0 / 25</span>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <!-- Score Results Box (Hidden by default) -->
+    <div class="score-modal" id="scoreModal" style="display: block;">
+        <h2 style="margin-bottom: 8px; color: #1e293b;">نتيجة التقييم النهائي</h2>
+        <p id="studentInfoText" style="color: var(--text-muted); margin-bottom: 20px; font-weight: 600;">المتدرب: أسامة محمد عبده | القسم: الصيانة الميكانيكية</p>
+        
+        <div class="score-circle">
+            <span class="score-number" id="scorePercent">84%</span>
+            <span class="score-total" id="scoreFraction">21 من 25</span>
+        </div>
+
+        <div id="scoreBadge" class="score-badge badge-passed">ناجح - تم اجتياز الاختبار بنجاح</div>
+
+        <div class="score-details-grid">
+            <div class="detail-box">
+                <div class="val" id="correctCount" style="color: var(--correct-text);">21</div>
+                <div class="lbl">الإجابات الصحيحة</div>
+            </div>
+            <div class="detail-box">
+                <div class="val" id="wrongCount" style="color: var(--wrong-text);">4</div>
+                <div class="lbl">الإجابات الخاطئة</div>
+            </div>
+            <div class="detail-box">
+                <div class="val" id="ratingText" style="color: var(--primary);">ممتاز (A)</div>
+                <div class="lbl">التقدير العام</div>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> طباعة كشف النتيجة</button>
+            <button class="btn-reset" onclick="resetQuiz()"><i class="fa-solid fa-rotate-right"></i> إعادة الاختبار</button>
+        </div>
+    </div>
+
+    <!-- Quiz Form -->
+    <form id="quizForm">
+        <div id="questionsList"><div class="question-card" id="q-card-1">
+                <div class="question-header">
+                    <span class="question-number">سؤال 1</span>
+                    <div class="question-text">ما هو الفارق الأساسي بين الذكاء الاصطناعي التوليدي (Generative AI) والذكاء الاصطناعي التقليدي (Traditional AI)؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-1-0">
+                        <input type="radio" name="q_1" value="0" onchange="onOptionSelect(1, 0)">
+                        <span class="option-key">أ</span>
+                        <span>الذكاء الاصطناعي التوليدي يقتصر فقط على العمليات الحسابية البسيطة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-1-1">
+                        <input type="radio" name="q_1" value="1" onchange="onOptionSelect(1, 1)">
+                        <span class="option-key">ب</span>
+                        <span>الذكاء التوليدي يستطيع إنشاء محتوى جديد (نصوص، صور، كود) بناءً على أنماط البيانات المدربة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-1-2">
+                        <input type="radio" name="q_1" value="2" onchange="onOptionSelect(1, 2)">
+                        <span class="option-key">ج</span>
+                        <span>الذكاء التقليدي قادر على توليد صور وصوت بشكل أسرع من النماذج اللغوية.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-1-3">
+                        <input type="radio" name="q_1" value="3" onchange="onOptionSelect(1, 3)">
+                        <span class="option-key">د</span>
+                        <span>لا يوجد أي فارق جوهري بينهما سوى مسمى التسويق.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-1">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): الذكاء التوليدي يستطيع إنشاء محتوى جديد (نصوص، صور، كود) بناءً على أنماط البيانات المدربة.<br>
+                    <em>الذكاء الاصطناعي التوليدي (Generative AI) يتميز بقابلية ابتكار وإنتاج بيانات ومحتويات جديدة تماماً مستمدة من الأنماط التي تعلمها أثناء التدريب.</em>
+                </div>
+            </div><div class="question-card" id="q-card-2">
+                <div class="question-header">
+                    <span class="question-number">سؤال 2</span>
+                    <div class="question-text">في نظام n8n، ما هي الوظيفة الرئيسية لعقدة المشغل (Trigger Node)؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-2-0">
+                        <input type="radio" name="q_2" value="0" onchange="onOptionSelect(2, 0)">
+                        <span class="option-key">أ</span>
+                        <span>إيقاف سير العمل عند حدوث خطأ في النظام.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-2-1">
+                        <input type="radio" name="q_2" value="1" onchange="onOptionSelect(2, 1)">
+                        <span class="option-key">ب</span>
+                        <span>إرسال البريد الإلكتروني للمستخدم بعد معالجة البيانات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-2-2">
+                        <input type="radio" name="q_2" value="2" onchange="onOptionSelect(2, 2)">
+                        <span class="option-key">ج</span>
+                        <span>بدء وتفعيل سير العمل (Workflow) فور وقوع حدث معين مثل (Webhook أو جدولة زمنية).</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-2-3">
+                        <input type="radio" name="q_2" value="3" onchange="onOptionSelect(2, 3)">
+                        <span class="option-key">د</span>
+                        <span>تشفير قواعد البيانات قبل إرسالها للذكاء الاصطناعي.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-2">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ج): بدء وتفعيل سير العمل (Workflow) فور وقوع حدث معين مثل (Webhook أو جدولة زمنية).<br>
+                    <em>عقدة الـ Trigger هي بمثابة شرارة البدء لأي أتمتة في n8n، حيث تستمع للأحداث الخارجية أو التوقيت وتُطلق تنفيذ المسار.</em>
+                </div>
+            </div><div class="question-card" id="q-card-3">
+                <div class="question-header">
+                    <span class="question-number">سؤال 3</span>
+                    <div class="question-text">تتكون الهيكلة الأساسية لوكيل الذكاء الاصطناعي (AI Agent) التفاعلي والمستقل في n8n من ثلاثة أركان رئيسية هي:</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-3-0">
+                        <input type="radio" name="q_3" value="0" onchange="onOptionSelect(3, 0)">
+                        <span class="option-key">أ</span>
+                        <span>المحرك الحسابي، الشاشة الخارجية، وعقدة التنبيهات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-3-1">
+                        <input type="radio" name="q_3" value="1" onchange="onOptionSelect(3, 1)">
+                        <span class="option-key">ب</span>
+                        <span>النموذج اللغوي (Model)، الذاكرة (Memory)، والأدوات (Tools).</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-3-2">
+                        <input type="radio" name="q_3" value="2" onchange="onOptionSelect(3, 2)">
+                        <span class="option-key">ج</span>
+                        <span>قاعدة بيانات SQL، مشغل الرسائل، ومترجم لغة بايثون.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-3-3">
+                        <input type="radio" name="q_3" value="3" onchange="onOptionSelect(3, 3)">
+                        <span class="option-key">د</span>
+                        <span>عقدة Webhook، عقدة الإيميل، وعقدة الجدول المزدوج.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-3">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): النموذج اللغوي (Model)، الذاكرة (Memory)، والأدوات (Tools).<br>
+                    <em>يتكون وكيل الذكاء الاصطناعي (AI Agent) من: النموذج اللغوي للعقل والمحاكمة، الذاكرة لحفظ السياق، والأدوات للتنفيذ والاستعلام الخارجي.</em>
+                </div>
+            </div><div class="question-card" id="q-card-4">
+                <div class="question-header">
+                    <span class="question-number">سؤال 4</span>
+                    <div class="question-text">ما أهمية الذاكرة (Memory Node) بالنسبة لوكيل الذكاء الاصطناعي في n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-4-0">
+                        <input type="radio" name="q_4" value="0" onchange="onOptionSelect(4, 0)">
+                        <span class="option-key">أ</span>
+                        <span>تُحسّن سرعة الاتصال بالإنترنت أثناء التنفيذ.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-4-1">
+                        <input type="radio" name="q_4" value="1" onchange="onOptionSelect(4, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تسمح للوكيل بتذكر سياق المحادثات السابقة واستدعائها لإتمام الحوار بشكل منطقي.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-4-2">
+                        <input type="radio" name="q_4" value="2" onchange="onOptionSelect(4, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تُنفذ الأوامر الميكانيكية داخل قواعد البيانات فقط.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-4-3">
+                        <input type="radio" name="q_4" value="3" onchange="onOptionSelect(4, 3)">
+                        <span class="option-key">د</span>
+                        <span>تُستخدم لتغيير تنسيق ملفات PDF تلقائياً.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-4">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): تسمح للوكيل بتذكر سياق المحادثات السابقة واستدعائها لإتمام الحوار بشكل منطقي.<br>
+                    <em>بدون الذاكرة، يتعامل الذكاء الاصطناعي مع كل رسالة كأنها الأولى، لكن الذاكرة تمنحه سياق المحادثة الممتدة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-5">
+                <div class="question-header">
+                    <span class="question-number">سؤال 5</span>
+                    <div class="question-text">ما هو دور الأدوات (Tools) المربوطة بوكيل الذكاء الاصطناعي؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-5-0">
+                        <input type="radio" name="q_5" value="0" onchange="onOptionSelect(5, 0)">
+                        <span class="option-key">أ</span>
+                        <span>تمكّن الوكيل من التفاعل مع الأنظمة الخارجية واستدعاء APIs أو البحث أو كتابة بيانات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-5-1">
+                        <input type="radio" name="q_5" value="1" onchange="onOptionSelect(5, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تقوم بتنظيف ذاكرة التخزين المؤقت للكمبيوتر تلقائياً.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-5-2">
+                        <input type="radio" name="q_5" value="2" onchange="onOptionSelect(5, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تحول النصوص العربية إلى اللغة الإنجليزية فقط.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-5-3">
+                        <input type="radio" name="q_5" value="3" onchange="onOptionSelect(5, 3)">
+                        <span class="option-key">د</span>
+                        <span>تُستخدم لتأمين التشفير المالي للموقع.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-5">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): تمكّن الوكيل من التفاعل مع الأنظمة الخارجية واستدعاء APIs أو البحث أو كتابة بيانات.<br>
+                    <em>الأدوات (Tools) هي الأذرع التي تمكن الوكيل من تنفيذ أفعال في العالم الخارجي مثل الاستعلام، إرسال رسائل، أو البحث.</em>
+                </div>
+            </div><div class="question-card" id="q-card-6">
+                <div class="question-header">
+                    <span class="question-number">سؤال 6</span>
+                    <div class="question-text">ماذا يقصد بمفهوم 'System Prompt' (تعليمات النظام) عند تهيئة الذكاء الاصطناعي؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-6-0">
+                        <input type="radio" name="q_6" value="0" onchange="onOptionSelect(6, 0)">
+                        <span class="option-key">أ</span>
+                        <span>هو كود البرمجة الذي يشغل خوادم شركة OpenAI.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-6-1">
+                        <input type="radio" name="q_6" value="1" onchange="onOptionSelect(6, 1)">
+                        <span class="option-key">ب</span>
+                        <span>التوجيهات والتعليمات الأساسية التي تحدد شخصية الوكيل، دوره، حدوده، وطريقة إجابته.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-6-2">
+                        <input type="radio" name="q_6" value="2" onchange="onOptionSelect(6, 2)">
+                        <span class="option-key">ج</span>
+                        <span>رسالة الخطأ التي تظهر للمستخدم عند انقطاع الخدمة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-6-3">
+                        <input type="radio" name="q_6" value="3" onchange="onOptionSelect(6, 3)">
+                        <span class="option-key">د</span>
+                        <span>اسم النطاق الخارجي الذي يتصل به الـ AI Agent.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-6">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): التوجيهات والتعليمات الأساسية التي تحدد شخصية الوكيل، دوره، حدوده، وطريقة إجابته.<br>
+                    <em>تعليمات النظام (System Prompt) تضبط سلوك الوكيل وقواعد الأمان والنبرة القياسية التي يجب الإلتزام بها أثناء الرد.</em>
+                </div>
+            </div><div class="question-card" id="q-card-7">
+                <div class="question-header">
+                    <span class="question-number">سؤال 7</span>
+                    <div class="question-text">ما هي التقنية التي ترمز إلى (RAG - Retrieval-Augmented Generation)؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-7-0">
+                        <input type="radio" name="q_7" value="0" onchange="onOptionSelect(7, 0)">
+                        <span class="option-key">أ</span>
+                        <span>طريقة لتسريع الروابط الشبكية بين العقد في n8n.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-7-1">
+                        <input type="radio" name="q_7" value="1" onchange="onOptionSelect(7, 1)">
+                        <span class="option-key">ب</span>
+                        <span>إستراتيجية تعزز إجابات النموذج اللغوي باسترجاع دقيق للمعلومات من قواعد معرفية خارجية مخصصة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-7-2">
+                        <input type="radio" name="q_7" value="2" onchange="onOptionSelect(7, 2)">
+                        <span class="option-key">ج</span>
+                        <span>بروتوكول تشفير يمنع تسريب البيانات من نماذج الذكاء الاصطناعي.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-7-3">
+                        <input type="radio" name="q_7" value="3" onchange="onOptionSelect(7, 3)">
+                        <span class="option-key">د</span>
+                        <span>أداة لتوليد الصور المتحركة من النصوص فقط.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-7">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): إستراتيجية تعزز إجابات النموذج اللغوي باسترجاع دقيق للمعلومات من قواعد معرفية خارجية مخصصة.<br>
+                    <em>تقنية RAG تدمج بين استرجاع البيانات المخصصة (من ملفات أو قواعد بيانات) وتوليد النصوص عبر الذكاء الاصطناعي لضمان إجابات دقيقة ومحدثة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-8">
+                <div class="question-header">
+                    <span class="question-number">سؤال 8</span>
+                    <div class="question-text">ما هي وظيفة الـ Webhook Trigger في سير عمل n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-8-0">
+                        <input type="radio" name="q_8" value="0" onchange="onOptionSelect(8, 0)">
+                        <span class="option-key">أ</span>
+                        <span>توليد رسائل تنبيه شهرية تلقائية.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-8-1">
+                        <input type="radio" name="q_8" value="1" onchange="onOptionSelect(8, 1)">
+                        <span class="option-key">ب</span>
+                        <span>استقبال طلبات HTTP من تطبيقات خارجية لحظياً وتفعيل سير العمل فوراً.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-8-2">
+                        <input type="radio" name="q_8" value="2" onchange="onOptionSelect(8, 2)">
+                        <span class="option-key">ج</span>
+                        <span>حفظ البيانات في أقراص تخزين سحابية مغلقة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-8-3">
+                        <input type="radio" name="q_8" value="3" onchange="onOptionSelect(8, 3)">
+                        <span class="option-key">د</span>
+                        <span>حساب المعدل الزمني لتنفيذ الأوامر.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-8">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): استقبال طلبات HTTP من تطبيقات خارجية لحظياً وتفعيل سير العمل فوراً.<br>
+                    <em>الـ Webhook يسمح لأي تطبيق خارجي بتفعيل الـ Workflow في n8n فور وقوع حدث عن طريق إرسال HTTP Request.</em>
+                </div>
+            </div><div class="question-card" id="q-card-9">
+                <div class="question-header">
+                    <span class="question-number">سؤال 9</span>
+                    <div class="question-text">في n8n، كيف تساعد العقد الشرطية مثل (If Node / Switch Node) في تصميم أتمتة الذكاء الاصطناعي؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-9-0">
+                        <input type="radio" name="q_9" value="0" onchange="onOptionSelect(9, 0)">
+                        <span class="option-key">أ</span>
+                        <span>تُستخدم لتوجيه تدفق البيانات والقرارات لمسارات مختلفة بناءً على شروط أو نتائج محددة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-9-1">
+                        <input type="radio" name="q_9" value="1" onchange="onOptionSelect(9, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تمنع الوكيل من التواصل مع أي نماذج ذكاء اصطناعي خارجية.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-9-2">
+                        <input type="radio" name="q_9" value="2" onchange="onOptionSelect(9, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تقوم بحذف البيانات المتكررة من الذاكرة بانتظام.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-9-3">
+                        <input type="radio" name="q_9" value="3" onchange="onOptionSelect(9, 3)">
+                        <span class="option-key">د</span>
+                        <span>تضمن تحويل نصوص المحادثة إلى صوت بشكل آلي.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-9">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): تُستخدم لتوجيه تدفق البيانات والقرارات لمسارات مختلفة بناءً على شروط أو نتائج محددة.<br>
+                    <em>عقد Decision (IF / Switch) تسمح بعمل منطق التفرع الشجري وتوجيه التنفيذ حسب البيانات المخرجة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-10">
+                <div class="question-header">
+                    <span class="question-number">سؤال 10</span>
+                    <div class="question-text">ما المقصود بـ 'Vector Embeddings' في سياق الذكاء الاصطناعي وقواعد البيانات المتجهة؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-10-0">
+                        <input type="radio" name="q_10" value="0" onchange="onOptionSelect(10, 0)">
+                        <span class="option-key">أ</span>
+                        <span>ملفات مضغوطة تُستخدم لنقل الصور عالية الدقة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-10-1">
+                        <input type="radio" name="q_10" value="1" onchange="onOptionSelect(10, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تمثيل رقمي دلالي للنصوص والمعلومات في شكل متجهات رياضية لمقارنة التشابه المعنوي.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-10-2">
+                        <input type="radio" name="q_10" value="2" onchange="onOptionSelect(10, 2)">
+                        <span class="option-key">ج</span>
+                        <span>مصفوفة أرقام تعبر عن عناوين IP الخاصة بالمستخدمين.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-10-3">
+                        <input type="radio" name="q_10" value="3" onchange="onOptionSelect(10, 3)">
+                        <span class="option-key">د</span>
+                        <span>برنامج لتسريع عملية الفحص والمسح الضوئي للمستندات.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-10">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): تمثيل رقمي دلالي للنصوص والمعلومات في شكل متجهات رياضية لمقارنة التشابه المعنوي.<br>
+                    <em>الـ Embeddings تحول الكلمات والنصوص إلى متجهات عددية تعبر عن المعنى، مما يسمح بالبحث الدلالي (Semantic Search).</em>
+                </div>
+            </div><div class="question-card" id="q-card-11">
+                <div class="question-header">
+                    <span class="question-number">سؤال 11</span>
+                    <div class="question-text">ما الفرق الرئيسي بين أداة (HTTP Request Tool) وأداة (Custom Code Node) داخل n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-11-0">
+                        <input type="radio" name="q_11" value="0" onchange="onOptionSelect(11, 0)">
+                        <span class="option-key">أ</span>
+                        <span>HTTP Request تستدعي خدمات APIs خارجية مباشرة، بينما Code Node تُنفذ أكواد مخصصة (JavaScript/Python) لمعالجة البيانات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-11-1">
+                        <input type="radio" name="q_11" value="1" onchange="onOptionSelect(11, 1)">
+                        <span class="option-key">ب</span>
+                        <span>HTTP Request تُستخدم فقط للصور، و Code Node للنصوص.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-11-2">
+                        <input type="radio" name="q_11" value="2" onchange="onOptionSelect(11, 2)">
+                        <span class="option-key">ج</span>
+                        <span>Code Node تعمل بدون خادم، و HTTP Request تحتاج لاتصال سلكي.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-11-3">
+                        <input type="radio" name="q_11" value="3" onchange="onOptionSelect(11, 3)">
+                        <span class="option-key">د</span>
+                        <span>لا يوجد أي فرق بينهما في الاستخدام العملي.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-11">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): HTTP Request تستدعي خدمات APIs خارجية مباشرة، بينما Code Node تُنفذ أكواد مخصصة (JavaScript/Python) لمعالجة البيانات.<br>
+                    <em>عقدة HTTP Request تتواصل مع واجهات برمجة التطبيقات الـ APIs، بينما Code Node تتيح كتابة كود برمجي مخصص للتحكم الكامل بالبيانات.</em>
+                </div>
+            </div><div class="question-card" id="q-card-12">
+                <div class="question-header">
+                    <span class="question-number">سؤال 12</span>
+                    <div class="question-text">ماذا يقصد بـ 'Temperature' كمعامل (Parameter) في النماذج اللغوية مثل GPT؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-12-0">
+                        <input type="radio" name="q_12" value="0" onchange="onOptionSelect(12, 0)">
+                        <span class="option-key">أ</span>
+                        <span>درجة حرارة المعالج أثناء معالجة البيانات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-12-1">
+                        <input type="radio" name="q_12" value="1" onchange="onOptionSelect(12, 1)">
+                        <span class="option-key">ب</span>
+                        <span>درجة العشوائية والإبداع في إجابات النموذج (قيمة منخفضة = إجابة محددة ودقيقة، قيمة عالية = إبداع وتنوع).</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-12-2">
+                        <input type="radio" name="q_12" value="2" onchange="onOptionSelect(12, 2)">
+                        <span class="option-key">ج</span>
+                        <span>مقياس لسرعة استجابة السيرفر بالثواني.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-12-3">
+                        <input type="radio" name="q_12" value="3" onchange="onOptionSelect(12, 3)">
+                        <span class="option-key">د</span>
+                        <span>عدد الكلمات الكلي المسموح بها في المحادثة الواحدة.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-12">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): درجة العشوائية والإبداع في إجابات النموذج (قيمة منخفضة = إجابة محددة ودقيقة، قيمة عالية = إبداع وتنوع).<br>
+                    <em>معامل الـ Temperature يحدد مستوى الإبداع في الرد؛ فالقيم المنخفضة (مثل 0.2) تعطي إجابات صارمة ودقيقة، والقيم المرتفعة تزوج بالإبداع.</em>
+                </div>
+            </div><div class="question-card" id="q-card-13">
+                <div class="question-header">
+                    <span class="question-number">سؤال 13</span>
+                    <div class="question-text">أي من أنواع الذاكرة التالية تُحفظ فيها المحادثات بشكل دائم في قاعدة بيانات خارجية مثل Postgres؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-13-0">
+                        <input type="radio" name="q_13" value="0" onchange="onOptionSelect(13, 0)">
+                        <span class="option-key">أ</span>
+                        <span>Window Buffer Memory المؤقتة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-13-1">
+                        <input type="radio" name="q_13" value="1" onchange="onOptionSelect(13, 1)">
+                        <span class="option-key">ب</span>
+                        <span>Postgres Chat Memory / External Database Memory.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-13-2">
+                        <input type="radio" name="q_13" value="2" onchange="onOptionSelect(13, 2)">
+                        <span class="option-key">ج</span>
+                        <span>In-Memory Session Local.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-13-3">
+                        <input type="radio" name="q_13" value="3" onchange="onOptionSelect(13, 3)">
+                        <span class="option-key">د</span>
+                        <span>RAM Cache Only Memory.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-13">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): Postgres Chat Memory / External Database Memory.<br>
+                    <em>استخدام ذاكرة مربطة بقاعدة بيانات مثل Postgres يضمن بقاء سجل المحادثات حتى بعد إعادة تشغيل الخوادم.</em>
+                </div>
+            </div><div class="question-card" id="q-card-14">
+                <div class="question-header">
+                    <span class="question-number">سؤال 14</span>
+                    <div class="question-text">في هندسة الأوامر (Prompt Engineering)، ما هي إستراتيجية 'Few-Shot Prompting'؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-14-0">
+                        <input type="radio" name="q_14" value="0" onchange="onOptionSelect(14, 0)">
+                        <span class="option-key">أ</span>
+                        <span>إعطاء النموذج أمراً قصيراً جداً بدون أي تفاصيل.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-14-1">
+                        <input type="radio" name="q_14" value="1" onchange="onOptionSelect(14, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تزويد النموذج ببعض الأمثلة التوضيحية (المُدخل والمُخرج المتوقع) ضمن الأمر لتوجيهه نحو المطلوب.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-14-2">
+                        <input type="radio" name="q_14" value="2" onchange="onOptionSelect(14, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تكرار إرسال الأمر 5 مرات متتالية لضمان الاستجابة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-14-3">
+                        <input type="radio" name="q_14" value="3" onchange="onOptionSelect(14, 3)">
+                        <span class="option-key">د</span>
+                        <span>إجبار النموذج على اختيار كلمة واحدة فقط في الإجابة.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-14">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): تزويد النموذج ببعض الأمثلة التوضيحية (المُدخل والمُخرج المتوقع) ضمن الأمر لتوجيهه نحو المطلوب.<br>
+                    <em>أسلوب Few-Shot يعتمد على إعطاء النموذج أمثلة محلولة مسبقاً داخل الأمر ليحاكي نفس التنسيق والسلوك.</em>
+                </div>
+            </div><div class="question-card" id="q-card-15">
+                <div class="question-header">
+                    <span class="question-number">سؤال 15</span>
+                    <div class="question-text">عند بناء سير عمل يتعامل مع بيانات حساسة أو صيانة، ما هي الفائدة من تفعيل 'Error Trigger' في n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-15-0">
+                        <input type="radio" name="q_15" value="0" onchange="onOptionSelect(15, 0)">
+                        <span class="option-key">أ</span>
+                        <span>تسمح بالتقاط الأخطاء فور حدوثها وتنفيذ مسار بديل مثل إرسال تنبيه للمهندس المسؤول.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-15-1">
+                        <input type="radio" name="q_15" value="1" onchange="onOptionSelect(15, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تقوم بحذف الأخطاء تلقائياً وإخفائها من السجل.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-15-2">
+                        <input type="radio" name="q_15" value="2" onchange="onOptionSelect(15, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تمنع وقوع أي خطأ برمجي في المستقبل بشكل تام.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-15-3">
+                        <input type="radio" name="q_15" value="3" onchange="onOptionSelect(15, 3)">
+                        <span class="option-key">د</span>
+                        <span>تسارع عملية التنفيذ بنسبة 50%.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-15">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): تسمح بالتقاط الأخطاء فور حدوثها وتنفيذ مسار بديل مثل إرسال تنبيه للمهندس المسؤول.<br>
+                    <em>عقدة Error Trigger تلتقط الاستثناءات والفشل في أي عقدة، مما يسمح بإرسال إشعارات طوارئ أو تنفيذ خطط إخفاق بديلة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-16">
+                <div class="question-header">
+                    <span class="question-number">سؤال 16</span>
+                    <div class="question-text">ما المقصود بـ 'Token' في نماذج الذكاء الاصطناعي اللغوية؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-16-0">
+                        <input type="radio" name="q_16" value="0" onchange="onOptionSelect(16, 0)">
+                        <span class="option-key">أ</span>
+                        <span>وحدة التقييم التي تقيس مساحة الشاشة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-16-1">
+                        <input type="radio" name="q_16" value="1" onchange="onOptionSelect(16, 1)">
+                        <span class="option-key">ب</span>
+                        <span>أجزاء صغيرة من الكلمات أو الأحرف التي يتناولها النموذج كربابة أساسية لمعالجة النصوص وحساب التكلفة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-16-2">
+                        <input type="radio" name="q_16" value="2" onchange="onOptionSelect(16, 2)">
+                        <span class="option-key">ج</span>
+                        <span>كلمة المرور الخاصة بالاتصال بالحساب.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-16-3">
+                        <input type="radio" name="q_16" value="3" onchange="onOptionSelect(16, 3)">
+                        <span class="option-key">د</span>
+                        <span>نوع من أنواع قواعد البيانات الشبكية.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-16">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): أجزاء صغيرة من الكلمات أو الأحرف التي يتناولها النموذج كربابة أساسية لمعالجة النصوص وحساب التكلفة.<br>
+                    <em>الـ Tokens هي الوحدات النصية المقطعة التي يقرأها النموذج ويتعامل معها (تقريباً 100 توكن تشكل حوالي 75 كلمة إنجليزية).</em>
+                </div>
+            </div><div class="question-card" id="q-card-17">
+                <div class="question-header">
+                    <span class="question-number">سؤال 17</span>
+                    <div class="question-text">عند دمج الذكاء الاصطناعي مع أنظمة الصيانة، ما هو الدور الأبرز لوكيل الذكاء الاصطناعي التفاعلي؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-17-0">
+                        <input type="radio" name="q_17" value="0" onchange="onOptionSelect(17, 0)">
+                        <span class="option-key">أ</span>
+                        <span>تحليل الأعراض الفنية، الاستعلام عن قطع الغيار من قواعد البيانات، واقتراح خطة صيانة أولية.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-17-1">
+                        <input type="radio" name="q_17" value="1" onchange="onOptionSelect(17, 1)">
+                        <span class="option-key">ب</span>
+                        <span>استبدال القطع الميكانيكية بكتل برمجية بديلة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-17-2">
+                        <input type="radio" name="q_17" value="2" onchange="onOptionSelect(17, 2)">
+                        <span class="option-key">ج</span>
+                        <span>إيقاف تشغيل المصنع بالكامل عند الاستفسار.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-17-3">
+                        <input type="radio" name="q_17" value="3" onchange="onOptionSelect(17, 3)">
+                        <span class="option-key">د</span>
+                        <span>كتابة تقارير ورقية يدويًا وطباعتها.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-17">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): تحليل الأعراض الفنية، الاستعلام عن قطع الغيار من قواعد البيانات، واقتراح خطة صيانة أولية.<br>
+                    <em>وكيل الذكاء الاصطناعي يستطيع الاستعلام من قاعدة البيانات وأدلة الصيانة المرفقة لتقديم تشخيص سريع وتوجيه مهندسي الصيانة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-18">
+                <div class="question-header">
+                    <span class="question-number">سؤال 18</span>
+                    <div class="question-text">كيف يتعامل الـ AI Agent مع طلب يحتوي على عدة خطوات معقدة؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-18-0">
+                        <input type="radio" name="q_18" value="0" onchange="onOptionSelect(18, 0)">
+                        <span class="option-key">أ</span>
+                        <span>يرفض الإجابة فوراً إذا زادت الخطوات عن خطوتين.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-18-1">
+                        <input type="radio" name="q_18" value="1" onchange="onOptionSelect(18, 1)">
+                        <span class="option-key">ب</span>
+                        <span>يستخدم حلقة التفكير والتخطيط (ReAct Loop) لتقسيم المشكلة واختيار الأدوات المناسبة بالترتيب.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-18-2">
+                        <input type="radio" name="q_18" value="2" onchange="onOptionSelect(18, 2)">
+                        <span class="option-key">ج</span>
+                        <span>ينفذ جميع الأدوات المتاحة في نفس اللحظة عشوائياً.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-18-3">
+                        <input type="radio" name="q_18" value="3" onchange="onOptionSelect(18, 3)">
+                        <span class="option-key">د</span>
+                        <span>يقوم بتحويل الطلب إلى ملف PDF بدون معالجة.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-18">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): يستخدم حلقة التفكير والتخطيط (ReAct Loop) لتقسيم المشكلة واختيار الأدوات المناسبة بالترتيب.<br>
+                    <em>نمط ReAct (Reasoning + Acting) يسمح للوكيل بالتفكير خطوة بخطوة، واختيار الأداة، وتقييم النتيجة، ثم الانتقال للخطوة التالية.</em>
+                </div>
+            </div><div class="question-card" id="q-card-19">
+                <div class="question-header">
+                    <span class="question-number">سؤال 19</span>
+                    <div class="question-text">ما الوظيفة الرئيسية لعقدة (Edit Fields / Set Node) في n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-19-0">
+                        <input type="radio" name="q_19" value="0" onchange="onOptionSelect(19, 0)">
+                        <span class="option-key">أ</span>
+                        <span>إنشاء وتعديل وإعادة إعادة ترتيب المتغيرات والحقول بين العقد المختلفة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-19-1">
+                        <input type="radio" name="q_19" value="1" onchange="onOptionSelect(19, 1)">
+                        <span class="option-key">ب</span>
+                        <span>إرسال تنبيهات بصوت مرتفع عند اكتمال العمل.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-19-2">
+                        <input type="radio" name="q_19" value="2" onchange="onOptionSelect(19, 2)">
+                        <span class="option-key">ج</span>
+                        <span>ترجمة النصوص من اللغات القديمة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-19-3">
+                        <input type="radio" name="q_19" value="3" onchange="onOptionSelect(19, 3)">
+                        <span class="option-key">د</span>
+                        <span>قياس سرعة المعالج المركزي.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-19">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): إنشاء وتعديل وإعادة إعادة ترتيب المتغيرات والحقول بين العقد المختلفة.<br>
+                    <em>عقدة Edit Fields تُستخدم لإعادة تشكيل هيكل البيانات (JSON) وتجهيز الحقول قبل تمريرها للعقد التالية.</em>
+                </div>
+            </div><div class="question-card" id="q-card-20">
+                <div class="question-header">
+                    <span class="question-number">سؤال 20</span>
+                    <div class="question-text">ما هي قاعدة البيانات المتجهة (Vector Database) الشهيرة التي تُستخدم لتخزين الـ Embeddings في تطبيقات RAG؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-20-0">
+                        <input type="radio" name="q_20" value="0" onchange="onOptionSelect(20, 0)">
+                        <span class="option-key">أ</span>
+                        <span>Pinecone أو Qdrant أو Supabase Vector.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-20-1">
+                        <input type="radio" name="q_20" value="1" onchange="onOptionSelect(20, 1)">
+                        <span class="option-key">ب</span>
+                        <span>Microsoft Excel فقط.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-20-2">
+                        <input type="radio" name="q_20" value="2" onchange="onOptionSelect(20, 2)">
+                        <span class="option-key">ج</span>
+                        <span>Notepad++.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-20-3">
+                        <input type="radio" name="q_20" value="3" onchange="onOptionSelect(20, 3)">
+                        <span class="option-key">د</span>
+                        <span>CSS Styling Sheet.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-20">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): Pinecone أو Qdrant أو Supabase Vector.<br>
+                    <em>قواعد البيانات المتجهة مثل Pinecone و Qdrant مخصصة لتخزين المتجهات واسترجاع المعلومات المتشابهة دلالياً بسرعة عالية.</em>
+                </div>
+            </div><div class="question-card" id="q-card-21">
+                <div class="question-header">
+                    <span class="question-number">سؤال 21</span>
+                    <div class="question-text">ما الذي يحدث إذا تم استدعاء أداة (Tool) داخل AI Agent ولكن لم تكن صيغة المدخلات متوافقة مع المتطلبات؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-21-0">
+                        <input type="radio" name="q_21" value="0" onchange="onOptionSelect(21, 0)">
+                        <span class="option-key">أ</span>
+                        <span>يقوم الذكاء الاصطناعي بتصحيح الأداة تلقائياً على الخادم.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-21-1">
+                        <input type="radio" name="q_21" value="1" onchange="onOptionSelect(21, 1)">
+                        <span class="option-key">ب</span>
+                        <span>قد تفشل عملية الاستدعاء (Tool Execution Error)، لذا يجب توضيح وصف الشروط بدقة في الـ System Prompt والأداة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-21-2">
+                        <input type="radio" name="q_21" value="2" onchange="onOptionSelect(21, 2)">
+                        <span class="option-key">ج</span>
+                        <span>يتحول الوكيل تلقائياً إلى وضع الطيران.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-21-3">
+                        <input type="radio" name="q_21" value="3" onchange="onOptionSelect(21, 3)">
+                        <span class="option-key">د</span>
+                        <span>يتم إعادة تشغيل نظام n8n بالكامل.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-21">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): قد تفشل عملية الاستدعاء (Tool Execution Error)، لذا يجب توضيح وصف الشروط بدقة في الـ System Prompt والأداة.<br>
+                    <em>يجب تحديد صيغ ووصف أدوات AI Agent بدقة لتفادي الأخطاء أثناء قيام الوكيل بتمرير المعاملات (Parameters).</em>
+                </div>
+            </div><div class="question-card" id="q-card-22">
+                <div class="question-header">
+                    <span class="question-number">سؤال 22</span>
+                    <div class="question-text">ما هو مفهوم الـ 'Fine-Tuning' في مجال النماذج اللغوية؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-22-0">
+                        <input type="radio" name="q_22" value="0" onchange="onOptionSelect(22, 0)">
+                        <span class="option-key">أ</span>
+                        <span>إعادة تدريب نموذج محدد مسبقاً على مجموعة بيانات مخصصة ليتخصص في مجال محدد بدرجة عالية.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-22-1">
+                        <input type="radio" name="q_22" value="1" onchange="onOptionSelect(22, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تغيير لون خلفية الشاشة أثناء المحادثة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-22-2">
+                        <input type="radio" name="q_22" value="2" onchange="onOptionSelect(22, 2)">
+                        <span class="option-key">ج</span>
+                        <span>شراء نموذج ذكاء اصطناعي جديد بالكامل.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-22-3">
+                        <input type="radio" name="q_22" value="3" onchange="onOptionSelect(22, 3)">
+                        <span class="option-key">د</span>
+                        <span>تقليل استهلاك الكهرباء عند استخدام الحاسوب.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-22">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): إعادة تدريب نموذج محدد مسبقاً على مجموعة بيانات مخصصة ليتخصص في مجال محدد بدرجة عالية.<br>
+                    <em>التعديل الدقيق (Fine-Tuning) يدرب النموذج العام على أسلوب أو بيانات متخصصة جداً لرفع كفاءته في مهمة محددة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-23">
+                <div class="question-header">
+                    <span class="question-number">سؤال 23</span>
+                    <div class="question-text">ما الفائدة من استخدام صيغة JSON في نقل البيانات بين عقد n8n؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-23-0">
+                        <input type="radio" name="q_23" value="0" onchange="onOptionSelect(23, 0)">
+                        <span class="option-key">أ</span>
+                        <span>أنها صيغة خفيفة وموحدة وسهلة القراءة من البرامج والذكاء الاصطناعي لتنظيم البيانات المعقدة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-23-1">
+                        <input type="radio" name="q_23" value="1" onchange="onOptionSelect(23, 1)">
+                        <span class="option-key">ب</span>
+                        <span>تمنع الفيروسات من الدخول إلى الحاسوب.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-23-2">
+                        <input type="radio" name="q_23" value="2" onchange="onOptionSelect(23, 2)">
+                        <span class="option-key">ج</span>
+                        <span>تزيد من دقة الألوان في الصور.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-23-3">
+                        <input type="radio" name="q_23" value="3" onchange="onOptionSelect(23, 3)">
+                        <span class="option-key">د</span>
+                        <span>تُستخدم فقط في أجهزة آبل.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-23">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): أنها صيغة خفيفة وموحدة وسهلة القراءة من البرامج والذكاء الاصطناعي لتنظيم البيانات المعقدة.<br>
+                    <em>JSON هي الصيغة القياسية لتبادل البيانات وتتيح تنظيم البيانات في شكل أزواج من المفاتيح والقيم (Key-Value).</em>
+                </div>
+            </div><div class="question-card" id="q-card-24">
+                <div class="question-header">
+                    <span class="question-number">سؤال 24</span>
+                    <div class="question-text">ماذا يعني الـ 'Hallucination' (الهلوسة) في الذكاء الاصطناعي التوليدي؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-24-0">
+                        <input type="radio" name="q_24" value="0" onchange="onOptionSelect(24, 0)">
+                        <span class="option-key">أ</span>
+                        <span>توقف البرنامج عن العمل فجأة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-24-1">
+                        <input type="radio" name="q_24" value="1" onchange="onOptionSelect(24, 1)">
+                        <span class="option-key">ب</span>
+                        <span>إنتاج الذكاء الاصطناعي لمعلومات غير صحيحة أو مختلقة بثقة تامة.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-24-2">
+                        <input type="radio" name="q_24" value="2" onchange="onOptionSelect(24, 2)">
+                        <span class="option-key">ج</span>
+                        <span>بطء اتصال الخادم بالإنترنت.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-24-3">
+                        <input type="radio" name="q_24" value="3" onchange="onOptionSelect(24, 3)">
+                        <span class="option-key">د</span>
+                        <span>تكرار الكلمة نفسها 100 مرة.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-24">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (ب): إنتاج الذكاء الاصطناعي لمعلومات غير صحيحة أو مختلقة بثقة تامة.<br>
+                    <em>الهلوسة تعني إعطاء النموذج إجابات خاطئة أو مخترعة يبدو ظاهرياً أنها صحيحة، وتساعد تقنية RAG في الحد من هذه المشكلة.</em>
+                </div>
+            </div><div class="question-card" id="q-card-25">
+                <div class="question-header">
+                    <span class="question-number">سؤال 25</span>
+                    <div class="question-text">كيف تساهم أتمتة n8n المربوطة بالذكاء الاصطناعي في رفع كفاءة فرق العمل؟</div>
+                </div>
+                <div class="options-grid">
+                    
+                    <label class="option-label" id="opt-lbl-25-0">
+                        <input type="radio" name="q_25" value="0" onchange="onOptionSelect(25, 0)">
+                        <span class="option-key">أ</span>
+                        <span>من خلال تقليل المهام اليدوية المتكررة، تسريع اتخاذ القرار، وربط الأنظمة ببعضها دون تدخل بشري دائم.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-25-1">
+                        <input type="radio" name="q_25" value="1" onchange="onOptionSelect(25, 1)">
+                        <span class="option-key">ب</span>
+                        <span>عن طريق إلغاء الحاجة للحواسيب في الشركات.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-25-2">
+                        <input type="radio" name="q_25" value="2" onchange="onOptionSelect(25, 2)">
+                        <span class="option-key">ج</span>
+                        <span>عبر تقليل عدد الساعات المسموح بها للعمل.</span>
+                    </label>
+                
+                    <label class="option-label" id="opt-lbl-25-3">
+                        <input type="radio" name="q_25" value="3" onchange="onOptionSelect(25, 3)">
+                        <span class="option-key">د</span>
+                        <span>من خلال تحويل جميع البيانات إلى رسوم متحركة.</span>
+                    </label>
+                
+                </div>
+                <div class="explanation" id="exp-25">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (أ): من خلال تقليل المهام اليدوية المتكررة، تسريع اتخاذ القرار، وربط الأنظمة ببعضها دون تدخل بشري دائم.<br>
+                    <em>الأتمتة الذكية تجمع بين قدرة الذكاء الاصطناعي على التحليل وسرعة تنفيذ الـ Workflows في اختصار الوقت وتقليل الأخطاء.</em>
+                </div>
+            </div></div>
+
+        <div class="action-container">
+            <button type="button" class="btn-submit" id="submitBtn" onclick="evaluateQuiz()" disabled="">
+                <i class="fa-solid fa-paper-plane"></i> تسليم الاختبار والتصحيح الآلي
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Comprehensive Quiz Data covering Slides 1 to 45 (Multiple Choice Questions - 4 Options Each)
+    const quizData = [
+        {
+            id: 1,
+            question: "ما هو الفارق الأساسي بين الذكاء الاصطناعي التوليدي (Generative AI) والذكاء الاصطناعي التقليدي (Traditional AI)؟",
+            options: [
+                "الذكاء الاصطناعي التوليدي يقتصر فقط على العمليات الحسابية البسيطة.",
+                "الذكاء التوليدي يستطيع إنشاء محتوى جديد (نصوص، صور، كود) بناءً على أنماط البيانات المدربة.",
+                "الذكاء التقليدي قادر على توليد صور وصوت بشكل أسرع من النماذج اللغوية.",
+                "لا يوجد أي فارق جوهري بينهما سوى مسمى التسويق."
+            ],
+            correct: 1,
+            explanation: "الذكاء الاصطناعي التوليدي (Generative AI) يتميز بقابلية ابتكار وإنتاج بيانات ومحتويات جديدة تماماً مستمدة من الأنماط التي تعلمها أثناء التدريب."
+        },
+        {
+            id: 2,
+            question: "في نظام n8n، ما هي الوظيفة الرئيسية لعقدة المشغل (Trigger Node)؟",
+            options: [
+                "إيقاف سير العمل عند حدوث خطأ في النظام.",
+                "إرسال البريد الإلكتروني للمستخدم بعد معالجة البيانات.",
+                "بدء وتفعيل سير العمل (Workflow) فور وقوع حدث معين مثل (Webhook أو جدولة زمنية).",
+                "تشفير قواعد البيانات قبل إرسالها للذكاء الاصطناعي."
+            ],
+            correct: 2,
+            explanation: "عقدة الـ Trigger هي بمثابة شرارة البدء لأي أتمتة في n8n، حيث تستمع للأحداث الخارجية أو التوقيت وتُطلق تنفيذ المسار."
+        },
+        {
+            id: 3,
+            question: "تتكون الهيكلة الأساسية لوكيل الذكاء الاصطناعي (AI Agent) التفاعلي والمستقل في n8n من ثلاثة أركان رئيسية هي:",
+            options: [
+                "المحرك الحسابي، الشاشة الخارجية، وعقدة التنبيهات.",
+                "النموذج اللغوي (Model)، الذاكرة (Memory)، والأدوات (Tools).",
+                "قاعدة بيانات SQL، مشغل الرسائل، ومترجم لغة بايثون.",
+                "عقدة Webhook، عقدة الإيميل، وعقدة الجدول المزدوج."
+            ],
+            correct: 1,
+            explanation: "يتكون وكيل الذكاء الاصطناعي (AI Agent) من: النموذج اللغوي للعقل والمحاكمة، الذاكرة لحفظ السياق، والأدوات للتنفيذ والاستعلام الخارجي."
+        },
+        {
+            id: 4,
+            question: "ما أهمية الذاكرة (Memory Node) بالنسبة لوكيل الذكاء الاصطناعي في n8n؟",
+            options: [
+                "تُحسّن سرعة الاتصال بالإنترنت أثناء التنفيذ.",
+                "تسمح للوكيل بتذكر سياق المحادثات السابقة واستدعائها لإتمام الحوار بشكل منطقي.",
+                "تُنفذ الأوامر الميكانيكية داخل قواعد البيانات فقط.",
+                "تُستخدم لتغيير تنسيق ملفات PDF تلقائياً."
+            ],
+            correct: 1,
+            explanation: "بدون الذاكرة، يتعامل الذكاء الاصطناعي مع كل رسالة كأنها الأولى، لكن الذاكرة تمنحه سياق المحادثة الممتدة."
+        },
+        {
+            id: 5,
+            question: "ما هو دور الأدوات (Tools) المربوطة بوكيل الذكاء الاصطناعي؟",
+            options: [
+                "تمكّن الوكيل من التفاعل مع الأنظمة الخارجية واستدعاء APIs أو البحث أو كتابة بيانات.",
+                "تقوم بتنظيف ذاكرة التخزين المؤقت للكمبيوتر تلقائياً.",
+                "تحول النصوص العربية إلى اللغة الإنجليزية فقط.",
+                "تُستخدم لتأمين التشفير المالي للموقع."
+            ],
+            correct: 0,
+            explanation: "الأدوات (Tools) هي الأذرع التي تمكن الوكيل من تنفيذ أفعال في العالم الخارجي مثل الاستعلام، إرسال رسائل، أو البحث."
+        },
+        {
+            id: 6,
+            question: "ماذا يقصد بمفهوم 'System Prompt' (تعليمات النظام) عند تهيئة الذكاء الاصطناعي؟",
+            options: [
+                "هو كود البرمجة الذي يشغل خوادم شركة OpenAI.",
+                "التوجيهات والتعليمات الأساسية التي تحدد شخصية الوكيل، دوره، حدوده، وطريقة إجابته.",
+                "رسالة الخطأ التي تظهر للمستخدم عند انقطاع الخدمة.",
+                "اسم النطاق الخارجي الذي يتصل به الـ AI Agent."
+            ],
+            correct: 1,
+            explanation: "تعليمات النظام (System Prompt) تضبط سلوك الوكيل وقواعد الأمان والنبرة القياسية التي يجب الإلتزام بها أثناء الرد."
+        },
+        {
+            id: 7,
+            question: "ما هي التقنية التي ترمز إلى (RAG - Retrieval-Augmented Generation)؟",
+            options: [
+                "طريقة لتسريع الروابط الشبكية بين العقد في n8n.",
+                "إستراتيجية تعزز إجابات النموذج اللغوي باسترجاع دقيق للمعلومات من قواعد معرفية خارجية مخصصة.",
+                "بروتوكول تشفير يمنع تسريب البيانات من نماذج الذكاء الاصطناعي.",
+                "أداة لتوليد الصور المتحركة من النصوص فقط."
+            ],
+            correct: 1,
+            explanation: "تقنية RAG تدمج بين استرجاع البيانات المخصصة (من ملفات أو قواعد بيانات) وتوليد النصوص عبر الذكاء الاصطناعي لضمان إجابات دقيقة ومحدثة."
+        },
+        {
+            id: 8,
+            question: "ما هي وظيفة الـ Webhook Trigger في سير عمل n8n؟",
+            options: [
+                "توليد رسائل تنبيه شهرية تلقائية.",
+                "استقبال طلبات HTTP من تطبيقات خارجية لحظياً وتفعيل سير العمل فوراً.",
+                "حفظ البيانات في أقراص تخزين سحابية مغلقة.",
+                "حساب المعدل الزمني لتنفيذ الأوامر."
+            ],
+            correct: 1,
+            explanation: "الـ Webhook يسمح لأي تطبيق خارجي بتفعيل الـ Workflow في n8n فور وقوع حدث عن طريق إرسال HTTP Request."
+        },
+        {
+            id: 9,
+            question: "في n8n، كيف تساعد العقد الشرطية مثل (If Node / Switch Node) في تصميم أتمتة الذكاء الاصطناعي؟",
+            options: [
+                "تُستخدم لتوجيه تدفق البيانات والقرارات لمسارات مختلفة بناءً على شروط أو نتائج محددة.",
+                "تمنع الوكيل من التواصل مع أي نماذج ذكاء اصطناعي خارجية.",
+                "تقوم بحذف البيانات المتكررة من الذاكرة بانتظام.",
+                "تضمن تحويل نصوص المحادثة إلى صوت بشكل آلي."
+            ],
+            correct: 0,
+            explanation: "عقد Decision (IF / Switch) تسمح بعمل منطق التفرع الشجري وتوجيه التنفيذ حسب البيانات المخرجة."
+        },
+        {
+            id: 10,
+            question: "ما المقصود بـ 'Vector Embeddings' في سياق الذكاء الاصطناعي وقواعد البيانات المتجهة؟",
+            options: [
+                "ملفات مضغوطة تُستخدم لنقل الصور عالية الدقة.",
+                "تمثيل رقمي دلالي للنصوص والمعلومات في شكل متجهات رياضية لمقارنة التشابه المعنوي.",
+                "مصفوفة أرقام تعبر عن عناوين IP الخاصة بالمستخدمين.",
+                "برنامج لتسريع عملية الفحص والمسح الضوئي للمستندات."
+            ],
+            correct: 1,
+            explanation: "الـ Embeddings تحول الكلمات والنصوص إلى متجهات عددية تعبر عن المعنى، مما يسمح بالبحث الدلالي (Semantic Search)."
+        },
+        {
+            id: 11,
+            question: "ما الفرق الرئيسي بين أداة (HTTP Request Tool) وأداة (Custom Code Node) داخل n8n؟",
+            options: [
+                "HTTP Request تستدعي خدمات APIs خارجية مباشرة، بينما Code Node تُنفذ أكواد مخصصة (JavaScript/Python) لمعالجة البيانات.",
+                "HTTP Request تُستخدم فقط للصور، و Code Node للنصوص.",
+                "Code Node تعمل بدون خادم، و HTTP Request تحتاج لاتصال سلكي.",
+                "لا يوجد أي فرق بينهما في الاستخدام العملي."
+            ],
+            correct: 0,
+            explanation: "عقدة HTTP Request تتواصل مع واجهات برمجة التطبيقات الـ APIs، بينما Code Node تتيح كتابة كود برمجي مخصص للتحكم الكامل بالبيانات."
+        },
+        {
+            id: 12,
+            question: "ماذا يقصد بـ 'Temperature' كمعامل (Parameter) في النماذج اللغوية مثل GPT؟",
+            options: [
+                "درجة حرارة المعالج أثناء معالجة البيانات.",
+                "درجة العشوائية والإبداع في إجابات النموذج (قيمة منخفضة = إجابة محددة ودقيقة، قيمة عالية = إبداع وتنوع).",
+                "مقياس لسرعة استجابة السيرفر بالثواني.",
+                "عدد الكلمات الكلي المسموح بها في المحادثة الواحدة."
+            ],
+            correct: 1,
+            explanation: "معامل الـ Temperature يحدد مستوى الإبداع في الرد؛ فالقيم المنخفضة (مثل 0.2) تعطي إجابات صارمة ودقيقة، والقيم المرتفعة تزوج بالإبداع."
+        },
+        {
+            id: 13,
+            question: "أي من أنواع الذاكرة التالية تُحفظ فيها المحادثات بشكل دائم في قاعدة بيانات خارجية مثل Postgres؟",
+            options: [
+                "Window Buffer Memory المؤقتة.",
+                "Postgres Chat Memory / External Database Memory.",
+                "In-Memory Session Local.",
+                "RAM Cache Only Memory."
+            ],
+            correct: 1,
+            explanation: "استخدام ذاكرة مربطة بقاعدة بيانات مثل Postgres يضمن بقاء سجل المحادثات حتى بعد إعادة تشغيل الخوادم."
+        },
+        {
+            id: 14,
+            question: "في هندسة الأوامر (Prompt Engineering)، ما هي إستراتيجية 'Few-Shot Prompting'؟",
+            options: [
+                "إعطاء النموذج أمراً قصيراً جداً بدون أي تفاصيل.",
+                "تزويد النموذج ببعض الأمثلة التوضيحية (المُدخل والمُخرج المتوقع) ضمن الأمر لتوجيهه نحو المطلوب.",
+                "تكرار إرسال الأمر 5 مرات متتالية لضمان الاستجابة.",
+                "إجبار النموذج على اختيار كلمة واحدة فقط في الإجابة."
+            ],
+            correct: 1,
+            explanation: "أسلوب Few-Shot يعتمد على إعطاء النموذج أمثلة محلولة مسبقاً داخل الأمر ليحاكي نفس التنسيق والسلوك."
+        },
+        {
+            id: 15,
+            question: "عند بناء سير عمل يتعامل مع بيانات حساسة أو صيانة، ما هي الفائدة من تفعيل 'Error Trigger' في n8n؟",
+            options: [
+                "تسمح بالتقاط الأخطاء فور حدوثها وتنفيذ مسار بديل مثل إرسال تنبيه للمهندس المسؤول.",
+                "تقوم بحذف الأخطاء تلقائياً وإخفائها من السجل.",
+                "تمنع وقوع أي خطأ برمجي في المستقبل بشكل تام.",
+                "تسارع عملية التنفيذ بنسبة 50%."
+            ],
+            correct: 0,
+            explanation: "عقدة Error Trigger تلتقط الاستثناءات والفشل في أي عقدة، مما يسمح بإرسال إشعارات طوارئ أو تنفيذ خطط إخفاق بديلة."
+        },
+        {
+            id: 16,
+            question: "ما المقصود بـ 'Token' في نماذج الذكاء الاصطناعي اللغوية؟",
+            options: [
+                "وحدة التقييم التي تقيس مساحة الشاشة.",
+                "أجزاء صغيرة من الكلمات أو الأحرف التي يتناولها النموذج كربابة أساسية لمعالجة النصوص وحساب التكلفة.",
+                "كلمة المرور الخاصة بالاتصال بالحساب.",
+                "نوع من أنواع قواعد البيانات الشبكية."
+            ],
+            correct: 1,
+            explanation: "الـ Tokens هي الوحدات النصية المقطعة التي يقرأها النموذج ويتعامل معها (تقريباً 100 توكن تشكل حوالي 75 كلمة إنجليزية)."
+        },
+        {
+            id: 17,
+            question: "عند دمج الذكاء الاصطناعي مع أنظمة الصيانة، ما هو الدور الأبرز لوكيل الذكاء الاصطناعي التفاعلي؟",
+            options: [
+                "تحليل الأعراض الفنية، الاستعلام عن قطع الغيار من قواعد البيانات، واقتراح خطة صيانة أولية.",
+                "استبدال القطع الميكانيكية بكتل برمجية بديلة.",
+                "إيقاف تشغيل المصنع بالكامل عند الاستفسار.",
+                "كتابة تقارير ورقية يدويًا وطباعتها."
+            ],
+            correct: 0,
+            explanation: "وكيل الذكاء الاصطناعي يستطيع الاستعلام من قاعدة البيانات وأدلة الصيانة المرفقة لتقديم تشخيص سريع وتوجيه مهندسي الصيانة."
+        },
+        {
+            id: 18,
+            question: "كيف يتعامل الـ AI Agent مع طلب يحتوي على عدة خطوات معقدة؟",
+            options: [
+                "يرفض الإجابة فوراً إذا زادت الخطوات عن خطوتين.",
+                "يستخدم حلقة التفكير والتخطيط (ReAct Loop) لتقسيم المشكلة واختيار الأدوات المناسبة بالترتيب.",
+                "ينفذ جميع الأدوات المتاحة في نفس اللحظة عشوائياً.",
+                "يقوم بتحويل الطلب إلى ملف PDF بدون معالجة."
+            ],
+            correct: 1,
+            explanation: "نمط ReAct (Reasoning + Acting) يسمح للوكيل بالتفكير خطوة بخطوة، واختيار الأداة، وتقييم النتيجة، ثم الانتقال للخطوة التالية."
+        },
+        {
+            id: 19,
+            question: "ما الوظيفة الرئيسية لعقدة (Edit Fields / Set Node) في n8n؟",
+            options: [
+                "إنشاء وتعديل وإعادة إعادة ترتيب المتغيرات والحقول بين العقد المختلفة.",
+                "إرسال تنبيهات بصوت مرتفع عند اكتمال العمل.",
+                "ترجمة النصوص من اللغات القديمة.",
+                "قياس سرعة المعالج المركزي."
+            ],
+            correct: 0,
+            explanation: "عقدة Edit Fields تُستخدم لإعادة تشكيل هيكل البيانات (JSON) وتجهيز الحقول قبل تمريرها للعقد التالية."
+        },
+        {
+            id: 20,
+            question: "ما هي قاعدة البيانات المتجهة (Vector Database) الشهيرة التي تُستخدم لتخزين الـ Embeddings في تطبيقات RAG؟",
+            options: [
+                "Pinecone أو Qdrant أو Supabase Vector.",
+                "Microsoft Excel فقط.",
+                "Notepad++.",
+                "CSS Styling Sheet."
+            ],
+            correct: 0,
+            explanation: "قواعد البيانات المتجهة مثل Pinecone و Qdrant مخصصة لتخزين المتجهات واسترجاع المعلومات المتشابهة دلالياً بسرعة عالية."
+        },
+        {
+            id: 21,
+            question: "ما الذي يحدث إذا تم استدعاء أداة (Tool) داخل AI Agent ولكن لم تكن صيغة المدخلات متوافقة مع المتطلبات؟",
+            options: [
+                "يقوم الذكاء الاصطناعي بتصحيح الأداة تلقائياً على الخادم.",
+                "قد تفشل عملية الاستدعاء (Tool Execution Error)، لذا يجب توضيح وصف الشروط بدقة في الـ System Prompt والأداة.",
+                "يتحول الوكيل تلقائياً إلى وضع الطيران.",
+                "يتم إعادة تشغيل نظام n8n بالكامل."
+            ],
+            correct: 1,
+            explanation: "يجب تحديد صيغ ووصف أدوات AI Agent بدقة لتفادي الأخطاء أثناء قيام الوكيل بتمرير المعاملات (Parameters)."
+        },
+        {
+            id: 22,
+            question: "ما هو مفهوم الـ 'Fine-Tuning' في مجال النماذج اللغوية؟",
+            options: [
+                "إعادة تدريب نموذج محدد مسبقاً على مجموعة بيانات مخصصة ليتخصص في مجال محدد بدرجة عالية.",
+                "تغيير لون خلفية الشاشة أثناء المحادثة.",
+                "شراء نموذج ذكاء اصطناعي جديد بالكامل.",
+                "تقليل استهلاك الكهرباء عند استخدام الحاسوب."
+            ],
+            correct: 0,
+            explanation: "التعديل الدقيق (Fine-Tuning) يدرب النموذج العام على أسلوب أو بيانات متخصصة جداً لرفع كفاءته في مهمة محددة."
+        },
+        {
+            id: 23,
+            question: "ما الفائدة من استخدام صيغة JSON في نقل البيانات بين عقد n8n؟",
+            options: [
+                "أنها صيغة خفيفة وموحدة وسهلة القراءة من البرامج والذكاء الاصطناعي لتنظيم البيانات المعقدة.",
+                "تمنع الفيروسات من الدخول إلى الحاسوب.",
+                "تزيد من دقة الألوان في الصور.",
+                "تُستخدم فقط في أجهزة آبل."
+            ],
+            correct: 0,
+            explanation: "JSON هي الصيغة القياسية لتبادل البيانات وتتيح تنظيم البيانات في شكل أزواج من المفاتيح والقيم (Key-Value)."
+        },
+        {
+            id: 24,
+            question: "ماذا يعني الـ 'Hallucination' (الهلوسة) في الذكاء الاصطناعي التوليدي؟",
+            options: [
+                "توقف البرنامج عن العمل فجأة.",
+                "إنتاج الذكاء الاصطناعي لمعلومات غير صحيحة أو مختلقة بثقة تامة.",
+                "بطء اتصال الخادم بالإنترنت.",
+                "تكرار الكلمة نفسها 100 مرة."
+            ],
+            correct: 1,
+            explanation: "الهلوسة تعني إعطاء النموذج إجابات خاطئة أو مخترعة يبدو ظاهرياً أنها صحيحة، وتساعد تقنية RAG في الحد من هذه المشكلة."
+        },
+        {
+            id: 25,
+            question: "كيف تساهم أتمتة n8n المربوطة بالذكاء الاصطناعي في رفع كفاءة فرق العمل؟",
+            options: [
+                "من خلال تقليل المهام اليدوية المتكررة، تسريع اتخاذ القرار، وربط الأنظمة ببعضها دون تدخل بشري دائم.",
+                "عن طريق إلغاء الحاجة للحواسيب في الشركات.",
+                "عبر تقليل عدد الساعات المسموح بها للعمل.",
+                "من خلال تحويل جميع البيانات إلى رسوم متحركة."
+            ],
+            correct: 0,
+            explanation: "الأتمتة الذكية تجمع بين قدرة الذكاء الاصطناعي على التحليل وسرعة تنفيذ الـ Workflows في اختصار الوقت وتقليل الأخطاء."
+        }
+    ];
+
+    const questionsContainer = document.getElementById('questionsList');
+    const progressBar = document.getElementById('progressBar');
+    const progressStatus = document.getElementById('progressStatus');
+
+    // Render Quiz Questions
+    function renderQuiz() {
+        questionsContainer.innerHTML = '';
+        const optionKeys = ['أ', 'ب', 'ج', 'د'];
+
+        quizData.forEach((q, index) => {
+            const card = document.createElement('div');
+            card.className = 'question-card';
+            card.id = `q-card-${q.id}`;
+
+            let optionsHtml = '';
+            q.options.forEach((opt, optIdx) => {
+                optionsHtml += `
+                    <label class="option-label" id="opt-lbl-${q.id}-${optIdx}">
+                        <input type="radio" name="q_${q.id}" value="${optIdx}" onchange="onOptionSelect(${q.id}, ${optIdx})">
+                        <span class="option-key">${optionKeys[optIdx]}</span>
+                        <span>${opt}</span>
+                    </label>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="question-header">
+                    <span class="question-number">سؤال ${q.id}</span>
+                    <div class="question-text">${q.question}</div>
+                </div>
+                <div class="options-grid">
+                    ${optionsHtml}
+                </div>
+                <div class="explanation" id="exp-${q.id}">
+                    <strong><i class="fa-solid fa-lightbulb"></i> الإجابة النموذجية والتوضيح:</strong><br>
+                    الإجابة الصحيحة هي (${optionKeys[q.correct]}): ${q.options[q.correct]}<br>
+                    <em>${q.explanation}</em>
+                </div>
+            `;
+            questionsContainer.appendChild(card);
+        });
+        updateProgress();
+    }
+
+    // Handle Selection Visual Style
+    function onOptionSelect(questionId, optionIdx) {
+        const labels = document.querySelectorAll(`[id^="opt-lbl-${questionId}-"]`);
+        labels.forEach(lbl => lbl.classList.remove('selected'));
+
+        const selectedLabel = document.getElementById(`opt-lbl-${questionId}-${optionIdx}`);
+        if(selectedLabel) selectedLabel.classList.add('selected');
+
+        updateProgress();
+    }
+
+    // Update Progress Meter
+    function updateProgress() {
+        const total = quizData.length;
+        let answered = 0;
+        quizData.forEach(q => {
+            const selected = document.querySelector(`input[name="q_${q.id}"]:checked`);
+            if (selected) answered++;
+        });
+        const percent = (answered / total) * 100;
+        progressBar.style.width = `${percent}%`;
+        progressStatus.innerText = `الإنجاز: ${answered} / ${total}`;
+    }
+
+    // Automatic Grading Engine
+    function evaluateQuiz() {
+        let score = 0;
+        let wrong = 0;
+        const total = quizData.length;
+
+        quizData.forEach(q => {
+            const card = document.getElementById(`q-card-${q.id}`);
+            const selectedInput = document.querySelector(`input[name="q_${q.id}"]:checked`);
+            const userChoice = selectedInput ? parseInt(selectedInput.value) : null;
+
+            card.classList.remove('correct-card', 'wrong-card');
+
+            // Highlight Correct and User Selection
+            const correctLabel = document.getElementById(`opt-lbl-${q.id}-${q.correct}`);
+            if (correctLabel) correctLabel.classList.add('correct-option');
+
+            if (userChoice === q.correct) {
+                score++;
+                card.classList.add('correct-card');
+            } else {
+                wrong++;
+                card.classList.add('wrong-card');
+                if (userChoice !== null) {
+                    const userWrongLabel = document.getElementById(`opt-lbl-${q.id}-${userChoice}`);
+                    if (userWrongLabel) userWrongLabel.classList.add('user-wrong-option');
+                }
+            }
+
+            // Disable all inputs after submission
+            const inputs = document.querySelectorAll(`input[name="q_${q.id}"]`);
+            inputs.forEach(input => input.disabled = true);
+        });
+
+        // Calculate and Render Score Box
+        const percentage = Math.round((score / total) * 100);
+        document.getElementById('scorePercent').innerText = `${percentage}%`;
+        document.getElementById('scoreFraction').innerText = `${score} من ${total}`;
+        document.getElementById('correctCount').innerText = score;
+        document.getElementById('wrongCount').innerText = wrong;
+
+        const name = document.getElementById('studentName').value || 'المتدرب';
+        const dept = document.getElementById('studentDept').value || 'عام';
+        document.getElementById('studentInfoText').innerText = `المتدرب: ${name} | القسم: ${dept}`;
+
+        const scoreBadge = document.getElementById('scoreBadge');
+        const ratingText = document.getElementById('ratingText');
+
+        if (percentage >= 50) {
+            scoreBadge.className = 'score-badge badge-passed';
+            scoreBadge.innerText = 'ناجح - تم اجتياز الاختبار بنجاح';
+        } else {
+            scoreBadge.className = 'score-badge badge-failed';
+            scoreBadge.innerText = 'راسب - يتطلب إعادة دراسة المنهج';
+        }
+
+        // Ratings
+        if (percentage >= 90) ratingText.innerText = 'ممتاز مرتفع (A+)';
+        else if (percentage >= 80) ratingText.innerText = 'ممتاز (A)';
+        else if (percentage >= 70) ratingText.innerText = 'جيد جداً (B)';
+        else if (percentage >= 60) ratingText.innerText = 'جيد (C)';
+        else if (percentage >= 50) ratingText.innerText = 'مقبول (D)';
+        else ratingText.innerText = 'ضعيف (F)';
+
+        // Display Modal & Scroll
+        const scoreModal = document.getElementById('scoreModal');
+        scoreModal.style.display = 'block';
+        scoreModal.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById('submitBtn').disabled = true;
+    }
+
+    // Reset Quiz Function
+    function resetQuiz() {
+        document.getElementById('quizForm').reset();
+        document.getElementById('scoreModal').style.display = 'none';
+        document.getElementById('submitBtn').disabled = false;
+
+        quizData.forEach(q => {
+            const card = document.getElementById(`q-card-${q.id}`);
+            card.classList.remove('correct-card', 'wrong-card');
+            
+            q.options.forEach((_, optIdx) => {
+                const lbl = document.getElementById(`opt-lbl-${q.id}-${optIdx}`);
+                if (lbl) {
+                    lbl.classList.remove('selected', 'correct-option', 'user-wrong-option');
+                }
+            });
+
+            const inputs = document.querySelectorAll(`input[name="q_${q.id}"]`);
+            inputs.forEach(input => input.disabled = false);
+        });
+
+        updateProgress();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize on Page Load
+    window.onload = renderQuiz;
+</script>
+
+
+</body></html>
